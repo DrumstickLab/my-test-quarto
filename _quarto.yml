@@ -5,6 +5,8 @@ book:
   title: "my-book"
   author: "my-book exercise"
   date: "11/22/2026"
+  output-file: my-book
+  downloads: [pdf, epub]
   chapters:
     - index.qmd
     - chapters/01-intro.qmd
@@ -17,11 +19,18 @@ lang: zh-Hans
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
+    nocite: '@*'
   pdf:
-    documentclass: scrreprt
-
-
-
+    documentclass: ctexbook
+    papersize: a4
+    geometry: [margin=20mm, footskip=10mm]
+    classoption: [oneside, openany, fontset=fandol]
+    pdf-engine: xelatex
+    latex-min-runs: 3
+    csl: assets/gb-t-7714-2015-numeric.csl
+    link-citations: true
+  epub:
+    toc: true
+    csl: assets/gb-t-7714-2015-numeric.csl
+    link-citations: true
