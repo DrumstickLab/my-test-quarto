@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "my-book",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n\n\n\nKnuth, Donald E. 1984年. 《Literate Programming》. Comput. J. (USA) 27 (2): 97～111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nPandoc User’s Guide. 不详. Pandoc. https://pandoc.org/MANUAL.html.\n\n\nQuarto. 不详. 《Creating a Book》. https://quarto.org/docs/books/.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/01-intro.html",
+    "href": "chapters/01-intro.html",
+    "title": "1  第一章习作",
+    "section": "",
+    "text": "一段中文。\n\n提纲\n\n输入示例\n\n\n\n\n\n\n图 1.1: 示例图片\n\n\n\n\n\n\n表 1.1: 示例表\n\n\n\n\n\n列\n值\n\n\n\n\n样本\n一\n\n\n\n\n\n\n\\[\nE=mc^2\n\\tag{1.1}\\]\n见 图 1.1、表 1.1 和 式 1.1。\nQuarto 的书稿项目与 Pandoc 的文档转换规则见 (Quarto, 不详; Pandoc User’s Guide, 不详)。\n\n\n\n\nKnuth, Donald E. 1984年. 《Literate Programming》. Comput. J. (USA) 27 (2): 97～111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nPandoc User’s Guide. 不详. Pandoc. https://pandoc.org/MANUAL.html.\n\n\nQuarto. 不详. 《Creating a Book》. https://quarto.org/docs/books/.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>第一章习作</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-summary.html",
+    "href": "chapters/02-summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n\n\n\nKnuth, Donald E. 1984年. 《Literate Programming》. Comput. J. (USA) 27 (2): 97～111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nPandoc User’s Guide. 不详. Pandoc. https://pandoc.org/MANUAL.html.\n\n\nQuarto. 不详. 《Creating a Book》. https://quarto.org/docs/books/.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nPandoc User’s Guide. n.d. Pandoc. https://pandoc.org/MANUAL.html.\n\n\nQuarto. n.d. “Creating a Book.” https://quarto.org/docs/books/.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
