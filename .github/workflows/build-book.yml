@@ -1,0 +1,60 @@
+name: Build book PDF
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-book-pdf-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Read Quarto version
+        id: quarto_version
+        run: |
+          version="$(cat .quarto-version)"
+          test -n "$version"
+          printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2.2.0
+        with:
+          version: ${{ steps.quarto_version.outputs.version }}
+      - name: Check structure and citations
+        run: python3 scripts/validate.py
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex texlive-lang-chinese texlive-fonts-recommended \
+            fonts-noto-cjk lmodern poppler-utils
+      - name: Check XeLaTeX
+        run: |
+          quarto --version
+          xelatex --version
+          kpsewhich ctexbook.cls
+          kpsewhich xeCJK.sty
+          kpsewhich FandolSong-Regular.otf
+      - name: Build and inspect the PDF
+        run: |
+          quarto render --to pdf
+          test -s _book/my-book.pdf
+          pdffonts _book/my-book.pdf > _book/pdf-fonts.txt
+          cat _book/pdf-fonts.txt
+          awk '$1 ~ /Fandol/ && $(NF - 4) == "yes" { found = 1 }
+            END { if (!found) { print "No embedded Fandol font"; exit 1 } }' _book/pdf-fonts.txt
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: book-pdf
+          if-no-files-found: error
+          path: _book/my-book.pdf
