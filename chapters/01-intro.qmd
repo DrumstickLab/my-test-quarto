@@ -21,3 +21,5 @@ E=mc^2
 $$ {#eq-example}
 
 见 @fig-example、@tbl-example 和 @eq-example。
+
+Quarto 的书稿项目与 Pandoc 的文档转换规则见 [@quarto-books; @pandoc-guide]。
